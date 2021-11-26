@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.app.g39</groupId>
 	<artifactId>appg39</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>appg39</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
