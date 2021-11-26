@@ -33,7 +33,7 @@ import lombok.NoArgsConstructor;
 @Table(name="partyroom")
 public class Partyroom implements Serializable {    
         @Id
-        @GeneratedValue(strategy= GenerationType.TABLE)
+        @GeneratedValue(strategy= GenerationType.IDENTITY)
         private int id;
         private String owner;
         private int capacity;
