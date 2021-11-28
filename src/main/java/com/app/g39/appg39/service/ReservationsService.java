@@ -36,9 +36,10 @@ public class ReservationsService {
     }
     
     public Reservations updateReservations(Reservations reservation){
-        Reservations existReservation=getReservationsById(reservation.getId());
+        Reservations existReservation=getReservationsById(reservation.getIdReservation());
         existReservation.setStartDate(reservation.getStartDate()  );
         existReservation.setDevolutionDate(reservation.getDevolutionDate());
+        existReservation.setStatus(reservation.getStatus());
         
         return repository.save(existReservation);        
     }

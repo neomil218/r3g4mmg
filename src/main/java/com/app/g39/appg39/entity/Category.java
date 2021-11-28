@@ -6,6 +6,7 @@
 package com.app.g39.appg39.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -29,12 +30,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name="category")
-public class Category {
+public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
+    
     @OneToMany(cascade={CascadeType.PERSIST},mappedBy="category")
     @JsonIgnoreProperties("category")
     private List<Partyroom> partyrooms;

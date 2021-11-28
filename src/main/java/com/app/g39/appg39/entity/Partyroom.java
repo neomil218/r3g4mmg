@@ -39,6 +39,7 @@ public class Partyroom implements Serializable {
         private int capacity;
         private String name;
         private String description;
+        
         @ManyToOne
         @JoinColumn(name="categoria_id") 
         @JsonIgnoreProperties("partyrooms")
@@ -46,5 +47,10 @@ public class Partyroom implements Serializable {
         
         @OneToMany(cascade={CascadeType.PERSIST},mappedBy="partyroom")
         @JsonIgnoreProperties("partyroom")
-        private List<Reservations> reservationss;
+        private List<Reservations> reservations_;
+        
+        @OneToMany(cascade={CascadeType.PERSIST},mappedBy="partyroom")
+        @JsonIgnoreProperties("partyroom")
+        private List<Messages> messages_;
+       
 }

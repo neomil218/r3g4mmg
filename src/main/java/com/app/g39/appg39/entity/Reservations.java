@@ -31,13 +31,21 @@ import lombok.NoArgsConstructor;
 public class Reservations implements Serializable {    
         @Id
         @GeneratedValue(strategy= GenerationType.IDENTITY)
-        private int id;
+        private int idReservation;
         @Temporal(javax.persistence.TemporalType.DATE)
         private Date startDate;
         @Temporal(javax.persistence.TemporalType.DATE)
         private Date devolutionDate;
+        
+        private String status;
+        
         @ManyToOne
-        @JoinColumn(name="partyroom_id")
-        @JsonIgnoreProperties("reservationss")
+        @JoinColumn(name="partyroom_id") 
+        @JsonIgnoreProperties("reservations_")
         private Partyroom partyroom;
+        
+        @ManyToOne
+        @JoinColumn(name="client_id") 
+        @JsonIgnoreProperties("reservations_")
+        private Client client;
 }

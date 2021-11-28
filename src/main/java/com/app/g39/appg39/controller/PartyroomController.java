@@ -53,7 +53,7 @@ public class PartyroomController {
     
     @PutMapping("/save")
     public ResponseEntity updateProducto(@RequestBody Partyroom partyroom){
-        service.updatePartyroom(partyroom); 
+        service.updatePartyroom(partyroom);     
         return ResponseEntity.status(201).build();
     }
     
