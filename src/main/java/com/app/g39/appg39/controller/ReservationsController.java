@@ -37,29 +37,29 @@ public class ReservationsController {
     private ReservationsService service;
     
     @GetMapping("/all")
-    public List<Reservations> findAllProducto(){
+    public List<Reservations> findAllReservations(){
         return service.getReservations(); 
     }
     
     @GetMapping("/{id}")
-    public Reservations findProductoById(@PathVariable int id){
+    public Reservations findReservationById(@PathVariable int id){
         return service.getReservationsById(id); 
     }
     
     @PostMapping("/save")
-    public ResponseEntity addProducto(@RequestBody Reservations reservation){
+    public ResponseEntity addReservation(@RequestBody Reservations reservation){
         service.saveReservations(reservation);
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/save")
-    public ResponseEntity updateProducto(@RequestBody Reservations reservation){
+    @PutMapping("/update")
+    public ResponseEntity updateReservation(@RequestBody Reservations reservation){
         service.updateReservations(reservation); 
         return ResponseEntity.status(201).build();
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteProducto(@PathVariable int id){
+    public ResponseEntity deleteReservation(@PathVariable int id){
         service.deleteReservation(id);
         return ResponseEntity.status(204).build();
     }

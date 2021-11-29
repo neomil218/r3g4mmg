@@ -47,10 +47,10 @@ public class Partyroom implements Serializable {
         
         @OneToMany(cascade={CascadeType.PERSIST},mappedBy="partyroom")
         @JsonIgnoreProperties("partyroom")
-        private List<Reservations> reservations_;
+        private List<Reservations> reservations;
         
         @OneToMany(cascade={CascadeType.PERSIST},mappedBy="partyroom")
         @JsonIgnoreProperties("partyroom")
-        private List<Messages> messages_;
+        private List<Messages> messages;
        
 }

@@ -36,7 +36,7 @@ public class ClientController {
     private ClientService service;
     
     @GetMapping("/all")
-    public List<Client> findAllCategorias(){
+    public List<Client> findAllClients(){
         return service.getClient();
     }
     
@@ -48,12 +48,12 @@ public class ClientController {
     }
     
     @PostMapping("/save")
-    public ResponseEntity addCategoria(@RequestBody Client client){
+    public ResponseEntity addClient(@RequestBody Client client){
         service.saveClient(client);
         return ResponseEntity.status(201).build();
     } 
     
-    @PutMapping("/save")
+    @PutMapping("/update")
     public ResponseEntity updateClient(@RequestBody Client client){
         service.updateClient(client);
         return ResponseEntity.status(201).build();                

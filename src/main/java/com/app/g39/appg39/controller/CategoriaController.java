@@ -35,32 +35,32 @@ public class CategoriaController {
     private CategoryService service;
     
     @GetMapping("/all")
-    public List<Category> findAllCategorias(){
-        return service.getCategorias();
+    public List<Category> findAllCategories(){
+        return service.getCategories();
     }
     
     @GetMapping("/{id}")
-    public Category findCategoriaById(@PathVariable int id){
+    public Category findCategoryById(@PathVariable int id){
         
-        return service.getCategoriaById(id);       
+        return service.getCategoryById(id);       
         
     }
     
     @PostMapping("/save")
-    public ResponseEntity addCategoria(@RequestBody Category categoria){
-        service.saveCategoria(categoria);
+    public ResponseEntity addCategory(@RequestBody Category category){
+        service.saveCategory(category);
         return ResponseEntity.status(201).build();
     } 
     
-    @PutMapping("/save")
-    public ResponseEntity updateCategoria(@RequestBody Category categoria){
-        service.updateCategoria(categoria);
+    @PutMapping("/update")
+    public ResponseEntity updateCategory(@RequestBody Category category){
+        service.updateCategory(category);
         return ResponseEntity.status(201).build();                
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCategoria(@PathVariable int id){
-        service.deleteCategoria(id);
+    public ResponseEntity deleteCategory(@PathVariable int id){
+        service.deleteCategory(id);
         return ResponseEntity.status(204).build();
     }
     

@@ -36,29 +36,29 @@ public class PartyroomController {
     private PartyroomService service;
     
     @GetMapping("/all")
-    public List<Partyroom> findAllProducto(){
+    public List<Partyroom> findAllPartyroom(){
         return service.getPartyroom(); //getProducto();
     }
     
     @GetMapping("/{id}")
-    public Partyroom findProductoById(@PathVariable int id){
+    public Partyroom findPärtyroomById(@PathVariable int id){
         return service.getPartyroomById(id); 
     }
     
     @PostMapping("/save")
-    public ResponseEntity addProducto(@RequestBody Partyroom partyroom){
+    public ResponseEntity addPartyroom(@RequestBody Partyroom partyroom){
         service.savePartyroom(partyroom);
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/save")
-    public ResponseEntity updateProducto(@RequestBody Partyroom partyroom){
+    @PutMapping("/update")
+    public ResponseEntity updatePartyroom(@RequestBody Partyroom partyroom){
         service.updatePartyroom(partyroom);     
         return ResponseEntity.status(201).build();
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteProducto(@PathVariable int id){
+    public ResponseEntity deletePartyroom(@PathVariable int id){
         service.deleteProducto(id);
         return ResponseEntity.status(204).build();
     }

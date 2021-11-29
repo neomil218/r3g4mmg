@@ -36,12 +36,12 @@ public class Messages implements Serializable {
         
         @ManyToOne
         @JoinColumn(name="partyroom_id") 
-        @JsonIgnoreProperties("messages_")
+        @JsonIgnoreProperties("messages")
         private Partyroom partyroom;
         
         @ManyToOne
         @JoinColumn(name="client_id") 
-        @JsonIgnoreProperties("messages_")
+        @JsonIgnoreProperties("messages")
         private Client client;
         
 }

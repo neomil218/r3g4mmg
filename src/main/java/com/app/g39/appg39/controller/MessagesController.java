@@ -22,12 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Carlos Caceres Ochoa
- */
-/**Api Rest de Producto**/
-
 @RestController 
 @RequestMapping("/api/Message")
 @CrossOrigin(origins="*",methods={RequestMethod.GET,RequestMethod.POST,
@@ -37,29 +31,29 @@ public class MessagesController {
     private MessagesService service;
     
     @GetMapping("/all")
-    public List<Messages> findAllProducto(){
+    public List<Messages> findAllMessage(){
         return service.getMessage(); 
     }
     
     @GetMapping("/{id}")
-    public Messages findProductoById(@PathVariable int id){
+    public Messages findMessageById(@PathVariable int id){
         return service.getMessageById(id); 
     }
     
     @PostMapping("/save")
-    public ResponseEntity addProducto(@RequestBody Messages message){
+    public ResponseEntity addMessage(@RequestBody Messages message){
         service.saveMessage(message);
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/save")
-    public ResponseEntity updateProducto(@RequestBody Messages message){
+    @PutMapping("/update")
+    public ResponseEntity updateMessage(@RequestBody Messages message){
         service.updateMessage(message); 
         return ResponseEntity.status(201).build();
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteProducto(@PathVariable int id){
+    public ResponseEntity deleteMessage(@PathVariable int id){
         service.deleteMessage(id);
         return ResponseEntity.status(204).build();
     }

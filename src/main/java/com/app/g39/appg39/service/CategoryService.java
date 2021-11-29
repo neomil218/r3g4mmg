@@ -21,26 +21,26 @@ public class CategoryService {
     @Autowired
     private CategoryRepository repository;
     
-    public List<Category> getCategorias(){
+    public List<Category> getCategories(){
         return repository.findAll();
     }
     
-    public Category getCategoriaById(int id){
+    public Category getCategoryById(int id){
         return repository.findById(id).orElse(null);
     } 
     
-    public Category saveCategoria(Category categoria){
-        return repository.save(categoria);
+    public Category saveCategory(Category category){
+        return repository.save(category);
     }
     
-    public Category updateCategoria(Category categoria){
-        Category existeCategoria=getCategoriaById(categoria.getId());
-        existeCategoria.setName(categoria.getName());
-        existeCategoria.setDescription(categoria.getDescription());
-        return repository.save(existeCategoria);
+    public Category updateCategory(Category category){
+        Category existCategory=getCategoryById(category.getId());
+        existCategory.setName(category.getName());
+        existCategory.setDescription(category.getDescription());
+        return repository.save(existCategory);
     }
     
-    public void deleteCategoria(int id){
+    public void deleteCategory(int id){
         repository.deleteById(id);
     }
     
