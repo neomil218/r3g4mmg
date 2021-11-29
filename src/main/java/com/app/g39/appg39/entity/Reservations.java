@@ -39,6 +39,7 @@ public class Reservations implements Serializable {
         
         private String status;
         
+        
         @ManyToOne
         @JoinColumn(name="partyroom_id") 
         @JsonIgnoreProperties("reservations")
@@ -48,4 +49,6 @@ public class Reservations implements Serializable {
         @JoinColumn(name="client_id") 
         @JsonIgnoreProperties("reservations")
         private Client client;
+        
+        private String score;
 }
